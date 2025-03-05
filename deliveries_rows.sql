@@ -1,0 +1,1 @@
+INSERT INTO "public"."deliveries" ("estimated_delivery_time", "delivery_number", "recipient_name", "recipient_phone", "delivery_address", "package_description", "additional_notes", "status", "created_at") VALUES ('2025-03-05 05:44:24+00', '1101', '備', '0932394610', '內', '吃', '8', '7', '2025-03-05 13:45:06');

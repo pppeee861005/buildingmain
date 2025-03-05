@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外送人員服務中心</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>歡迎使用外送人員服務平台</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" id="home-link">服務首頁</a></li>
+                <li><a href="#delivery-status" id="delivery-status-link">送貨查詢</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>歡迎使用外送人員服務平台。這裡提供各種外送服務，讓您的工作更便利。</p>
+        <div class="service-cards">
+            <div class="service-card" id="delivery-registration-card">
+                <h2>送貨登記</h2>
+                <p>快速登記您的送貨訂單，追蹤每一個包裹的狀態。</p>
+            </div>
+            <div class="service-card" id="delivery-status-card">
+                <h2>送貨查詢</h2>
+                <p>查看您已登記的送貨訂單狀態和詳細信息。</p>
+            </div>
+        </div>
+
+        <div class="delivery-registration-form" id="deliveryRegistrationForm" style="display: none;">
+            <h2>送貨登記</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="deliveryNumber">送貨單號</label>
+                    <input type="text" id="deliveryNumber" name="deliveryNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipientName">收件人姓名</label>
+                    <input type="text" id="recipientName" name="recipientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipientPhone">收件人電話</label>
+                    <input type="tel" id="recipientPhone" name="recipientPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryAddress">送貨地址</label>
+                    <input type="text" id="deliveryAddress" name="deliveryAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="packageDescription">包裹描述</label>
+                    <textarea id="packageDescription" name="packageDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="estimatedDeliveryTime">預計送達時間</label>
+                    <input type="datetime-local" id="estimatedDeliveryTime" name="estimatedDeliveryTime">
+                </div>
+                <div class="form-group">
+                    <label for="additionalNotes">備註</label>
+                    <textarea id="additionalNotes" name="additionalNotes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-submit">提交登記</button>
+                    <button type="button" class="btn btn-cancel" id="cancelRegistration">取消</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="delivery-status-section" id="deliveryStatusSection" style="display: none;">
+            <h2>送貨查詢</h2>
+            <form id="deliveryStatusForm">
+                <div class="form-group">
+                    <label for="searchDeliveryNumber">輸入送貨單號</label>
+                    <input type="text" id="searchDeliveryNumber" name="searchDeliveryNumber" required>
+                </div>
+                <button type="submit" class="btn btn-search">查詢</button>
+            </form>
+            <div id="deliveryStatusResult"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 外送人員服務平台</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
